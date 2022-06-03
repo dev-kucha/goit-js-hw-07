@@ -40,8 +40,25 @@ function getGalleryItemUrlOriginal(evt) {
 
 // 4. Открытие модального окна по клику на элементе галереи. Для этого ознакомься с документацией и примерами.
 
+// 5. Замена значения атрибута src элемента <img> в модальном окне перед открытием. Используй готовую разметку модального окна с изображением из примеров библиотеки basicLightbox.
+
 galleryContainer.addEventListener('click', createModalLightbox);
 
 function createModalLightbox(evt) {
-  basicLightbox.create(`<img width="1400" height="900" src="${evt.target.dataset.source}">`).show();
+  evt.preventDefault();
+  const instance = basicLightbox.create(
+    `<img width="1400" height="900" src="${evt.target.dataset.source}">`,
+    {
+      onShow: () => document.addEventListener('keydown', onKeydownEsc),
+      onClose: () => document.removeEventListener('keydown', onKeydownEsc),
+    }
+  );
+
+  instance.show();
+
+  function onKeydownEsc(evt) {
+    if (evt.code === 'Escape') {
+      instance.close();
+    }
+  }
 }

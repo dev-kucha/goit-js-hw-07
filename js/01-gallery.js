@@ -6,7 +6,6 @@ console.log(galleryItems);
 // 1. Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи.
 
 const galleryContainer = document.querySelector('.gallery');
-// console.log(galleryContainer);
 
 const galleryMarkup = galleryItems.map(galleryItem => {
   return `<div class="gallery__item">
@@ -20,7 +19,6 @@ const galleryMarkup = galleryItems.map(galleryItem => {
   </a>
 </div>`;
 });
-// console.log(galleryMarkup.join(''));
 
 galleryContainer.innerHTML = galleryMarkup.join('');
 

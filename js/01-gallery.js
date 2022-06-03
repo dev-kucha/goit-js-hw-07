@@ -23,3 +23,15 @@ const galleryMarkup = galleryItems.map(galleryItem => {
 // console.log(galleryMarkup.join(''));
 
 galleryContainer.innerHTML = galleryMarkup.join('');
+
+// 2. Реализация делегирования на div.gallery и получение url большого изображения.
+
+galleryContainer.addEventListener('click', getGalleryItemUrlOriginal);
+
+function getGalleryItemUrlOriginal(evt) {
+  evt.preventDefault();
+  if (!evt.target.dataset.source) {
+    return;
+  }
+  console.log(evt.target.dataset.source);
+}

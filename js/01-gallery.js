@@ -35,3 +35,13 @@ function getGalleryItemUrlOriginal(evt) {
   }
   console.log(evt.target.dataset.source);
 }
+
+// 3. Подключение скрипта и стилей библиотеки модального окна basicLightbox. Используй CDN сервис jsdelivr и добавь в проект ссылки на минифицированные (.min) файлы библиотеки.
+
+// 4. Открытие модального окна по клику на элементе галереи. Для этого ознакомься с документацией и примерами.
+
+galleryContainer.addEventListener('click', createModalLightbox);
+
+function createModalLightbox(evt) {
+  basicLightbox.create(`<img width="1400" height="900" src="${evt.target.dataset.source}">`).show();
+}

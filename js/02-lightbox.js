@@ -8,8 +8,8 @@ console.log(galleryItems);
 const galleryContainer = document.querySelector('.gallery');
 
 const galleryMarkup = galleryItems.map(galleryItem => {
-  return `<a class="gallery__item" href="${galleryItem.original}">
-  <img class="gallery__image" src="${galleryItem.preview}" alt="${galleryItem.description}" /></a>`;
+  return `<li><a class="gallery__item" href="${galleryItem.original}">
+  <img class="gallery__image" src="${galleryItem.preview}" alt="${galleryItem.description}" /></a></li>`;
 });
 
 galleryContainer.innerHTML = galleryMarkup.join('');

@@ -18,7 +18,7 @@ galleryContainer.innerHTML = galleryMarkup.join('');
 
 // 3. Инициализация библиотеки после того как элементы галереи созданы и добавлены в div.gallery. Для этого ознакомься с документацией SimpleLightbox - в первую очередь секции «Usage» и «Markup».
 
-var lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captions: true,
   captionSelector: 'img',
   captionsData: 'alt',

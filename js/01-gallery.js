@@ -51,9 +51,9 @@ function createModalLightbox(evt) {
       onClose: () => document.removeEventListener('keydown', onKeydownEsc),
     }
   );
-
-  instance.show();
-
+  if (evt.target.dataset.source) {
+    instance.show();
+  }
   function onKeydownEsc(evt) {
     if (evt.code === 'Escape') {
       instance.close();
